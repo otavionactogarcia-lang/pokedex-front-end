@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokédex Retrô</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="aparelho">
+    <div class="lente" aria-hidden="true"></div>
+    <div class="luzes" aria-hidden="true"><i></i><i></i><i></i></div>
+    <h1>POKÉDEX</h1>
+    <p id="total">Conectando à PokéAPI...</p>
+  </header>
+
+  <main class="tela">
+    <form id="form-busca" class="controles">
+      <input id="campo-busca" type="search" placeholder="Nome ou número" aria-label="Buscar Pokémon">
+      <select id="geracao" aria-label="Geração">
+        <option value="1-9999">Todas as gerações</option>
+        <option value="1-151">Geração I (1-151)</option>
+        <option value="152-251">Geração II (152-251)</option>
+        <option value="252-386">Geração III (252-386)</option>
+        <option value="387-493">Geração IV (387-493)</option>
+        <option value="494-649">Geração V (494-649)</option>
+        <option value="650-721">Geração VI (650-721)</option>
+        <option value="722-809">Geração VII (722-809)</option>
+        <option value="810-905">Geração VIII (810-905)</option>
+        <option value="906-9999">Geração IX (906+)</option>
+      </select>
+      <button type="button" id="btn-favoritos" aria-pressed="false">♥ Favoritos</button>
+    </form>
+
+    <p id="mensagem" role="status"></p>
+
+    <!-- O HTML só recebe os cards: eles são criados pelo JavaScript -->
+    <section id="lista-cards" class="grade" aria-live="polite"></section>
+
+    <div class="rodape-lista">
+      <button id="btn-mais" type="button" hidden>Carregar mais</button>
+    </div>
+  </main>
+
+  <!-- Janela de detalhes: o conteúdo também é montado pelo JavaScript -->
+  <dialog id="detalhe" aria-label="Detalhes do Pokémon">
+    <button type="button" id="fechar-detalhe" class="fechar" aria-label="Fechar">X</button>
+    <div id="detalhe-conteudo"></div>
+  </dialog>
+
+  <footer>Projeto acadêmico · UniFECAF · Dados: pokeapi.co</footer>
+  <script src="script.js"></script>
+</body>
+</html>
