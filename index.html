@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokédex 90s & 2000s</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="lente" aria-hidden="true"></div>
+    <div>
+      <h1>Pokédex</h1>
+      <p>Dados em tempo real da PokéAPI</p>
+    </div>
+  </header>
+
+  <main>
+    <form id="form-busca" class="busca">
+      <input id="campo-busca" type="search" placeholder="Nome ou número (ex: pikachu, 25)" aria-label="Buscar Pokémon">
+      <button type="submit">Buscar</button>
+      <button type="button" id="btn-favoritos" aria-pressed="false">♥ Favoritos</button>
+    </form>
+
+    <p id="mensagem" role="status"></p>
+
+    <!-- O HTML só recebe os cards: eles são criados pelo JavaScript -->
+    <section id="lista-cards" class="grade" aria-live="polite"></section>
+
+    <div class="rodape-lista">
+      <button id="btn-mais" type="button">Carregar mais</button>
+    </div>
+  </main>
+
+  <footer>Projeto acadêmico · UniFECAF · Dados: pokeapi.co</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
